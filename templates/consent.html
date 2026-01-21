@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Einverständniserklärung zur Studie</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+    line-height: 1.6;
+    background: #fdf6f0;
+    color: #333;
+  }
+
+  h1, h2 {
+    text-align: center;
+    color: #5c4d7d;
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
+
+  .card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+  }
+
+  select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+  }
+
+  button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: #5c4d7d;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  button:hover {
+    background-color: #4b3b65;
+  }
+
+  ul {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+  .note {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Wie gut beschreiben Persönlichkeitsmodelle wirklich, wer wir sind?</h1>
+
+<div class="card">
+
+  <p>In dieser Online Studie möchten wir untersuchen, wie unterschiedliche Arten von Persönlichkeitsbeschreibungen mit etablierten psychologischen Persönlichkeitsmerkmalen zusammenhängen. </p>
+
+    <p>Die Studie dient ausschließlich wissenschaftlichen Forschungszwecken.</p>
+
+  <p>Die Teilnahme dauert etwa 10 Minuten. Du kannst die Studie jederzeit ohne Angabe von Gründen abbrechen, ohne dass Dir daraus Nachteile entstehen.</p>
+
+  <p><strong>Informationen zum Ablauf der Studie:</strong></p>
+  <ul>
+    <li>Es werden keine Namen, Geburtsdaten, IP-Adressen oder andere personenbezogene Daten erhoben.</li>
+    <li>Falls Du Deine persönlichen Human Design Infos noch nicht kennst, kannst Du im Verlauf der Studie eine externe, frei zugängliche Webseite nutzen, um dort Deine Human Design Infos zu generieren. </li>
+      <li>Diese Daten verbleiben auf der externen Seite und werden nicht von uns gespeichert.</li>
+    <li>Nach der Rückkehr zur Studienseite machst Du einige kurze Angaben zu den erhaltenen Ergebnissen und beantwortest anschließend 15 Fragen eines etablierten Persönlichkeitstests (Big-Five-XS).</li>
+  </ul>
+
+  <p>Bei Fragen kannst Du Dich jederzeit an die Studienleitung wenden: <a href="mailto:ricarda.bothe@uni-goettingen.de">ricarda.bothe@uni-goettingen.de</a></p>
+
+  <p>Bitte bestätige vor der Teilnahme:</p>
+  <ul>
+    <li>Ich nehme freiwillig teil und kann die Studie jederzeit abbrechen.</li>
+    <li>Meine Angaben werden anonymisiert erfasst und ausschließlich zu wissenschaftlichen Zwecken ausgewertet.</li>
+
+  </ul>
+</div>
+
+<form class="card" method="post" action="/consent-submit">
+
+  <label for="age_group">Altersgruppe:</label>
+  <select name="age_group" id="age_group" required>
+    <option value="" disabled selected>Bitte auswählen</option>
+    <option value="unter_18">Unter 18</option>
+    <option value="18_24">18–24</option>
+    <option value="25_34">25–34</option>
+    <option value="35_44">35–44</option>
+    <option value="45_54">45–54</option>
+    <option value="55_64">55–64</option>
+    <option value="65_plus">65+</option>
+  </select>
+
+  <label for="gender">Geschlechtsidentität:</label>
+  <select name="gender" id="gender" required>
+    <option value="" disabled selected>Bitte auswählen</option>
+    <option value="weiblich">Weiblich</option>
+    <option value="männlich">Männlich</option>
+    <option value="nonbinär">Non-binär</option>
+    <option value="selbstbeschrieben">Selbstbeschreibung</option>
+    <option value="keine_angabe">Möchte ich nicht angeben</option>
+  </select>
+
+  <label>
+    <input type="checkbox" name="agree" value="yes" required>
+    Ich habe die Teilnahmeinformationen gelesen und stimme der Teilnahme zu.
+  </label>
+
+  <button type="submit">Weiter</button>
+</form>
+
+</body>
+</html>

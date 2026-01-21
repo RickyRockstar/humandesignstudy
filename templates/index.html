@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Human Design Study</title>
+</head>
+<body>
+<h1>Enter Birth Data</h1>
+
+<form id="birthForm">
+    <input type="number" name="year" placeholder="Year" required><br>
+    <input type="number" name="month" placeholder="Month" required><br>
+    <input type="number" name="day" placeholder="Day" required><br>
+    <input type="number" step="0.01" name="hour" placeholder="Hour (e.g. 12.5)" required><br>
+    <input type="text" name="city" placeholder="City of birth" required><br>
+    <input type="text" name="country" placeholder="Country of birth" required><br>    <button type="submit">Submit</button>
+</form>
+
+<pre id="result"></pre>
+
+<script>
+document.getElementById("birthForm").onsubmit = async function(e) {
+    e.preventDefault();
+    const formData = Object.fromEntries(new FormData(e.target).entries());
+    const response = await fetch("/compute-hd", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+    });
+    const result = await response.json();
+    document.getElementById("result").textContent = JSON.stringify(result, null, 2);
+};
+</script>
+</body>
+</html>

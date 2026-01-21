@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Human Design Eingabe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #0e1a2b;
+    color: #f2f4f8;
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h1 {
+    text-align: center;
+    color: #d6e4ff;
+    margin-bottom: 10px;
+  }
+
+  p {
+    text-align: center;
+    color: #b8c7e0;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    background: #16263d;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+
+  label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #dbe6ff;
+  }
+
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    background: #f2f4f8;
+    color: #0e1a2b;
+  }
+
+  .symbol {
+    font-size: 18px;
+    margin-right: 6px;
+  }
+
+  button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #4f7cff, #6fa8ff);
+    color: #0e1a2b;
+  }
+
+  button:hover {
+    opacity: 0.95;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>Human Design Angaben</h1>
+<p>Bitte gib deine Human Design Basisinformationen ein.</p>
+
+<div class="card">
+
+<form method="post" action="/questionnaire">
+
+  <!-- Hidden fields -->
+  <input type="hidden" name="participant_id" value="{{ participant_id }}">
+  <input type="hidden" name="age_group" value="{{ age_group }}">
+  <input type="hidden" name="gender" value="{{ gender }}">
+  <input type="hidden" name="hd_known" value="{{ hd_known }}">
+
+  <label>
+    <span class="symbol">◯</span> Human Design Typ
+  </label>
+  <select name="hd_type" required>
+    <option value="" disabled selected>Bitte auswählen</option>
+    {% for t in types %}
+      <option value="{{ t }}">{{ t }}</option>
+    {% endfor %}
+  </select>
+
+  <label>
+    <span class="symbol">△</span> Innere Autorität
+  </label>
+  <select name="authority" required>
+    <option value="" disabled selected>Bitte auswählen</option>
+    {% for a in authorities %}
+      <option value="{{ a }}">{{ a }}</option>
+    {% endfor %}
+  </select>
+
+  <label>
+    <span class="symbol">⬡</span> Profil
+  </label>
+  <select name="profile" required>
+    <option value="" disabled selected>Bitte auswählen</option>
+    {% for p in profiles %}
+      <option value="{{ p }}">{{ p }}</option>
+    {% endfor %}
+  </select>
+
+  <button type="submit">Weiter zum Fragebogen →</button>
+
+</form>
+</div>
+
+</body>
+</html>

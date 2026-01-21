@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>Human Design Anweisungen</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(180deg, #0f172a, #020617);
+    color: #e5e7eb;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  h2 {
+    margin-top: 2.5rem;
+    font-size: 1.6rem;
+    color: #c7d2fe;
+  }
+  p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+  .card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  ul {
+    margin-left: 1.2rem;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  .cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  .cta button {
+    background: #6366f1;
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 999px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .cta button:hover {
+    background: #4f46e5;
+  }
+  .symbols {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    opacity: 0.85;
+    font-size: 0.95rem;
+  }
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  select {
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Human Design & Persönlichkeit</h1>
+
+  <div class="card">
+    <p>
+      Human Design ist ein System, das Elemente aus Astrologie, I Ging und
+      dem Chakrensystem kombiniert, um individuelle Unterschiede
+      darin zu beschreiben, wie Menschen die Welt wahrnehmen, Entscheidungen treffen
+      und mit anderen interagieren.
+    </p>
+    <p>
+      In dieser Studie werden Human Design Informationen als <em>selbstbeschreibender Rahmen</em>
+      genutzt und mit etablierten psychologischen Persönlichkeitsmerkmalen verglichen.
+    </p>
+  </div>
+
+  <h2>Wesentliche Elemente von Human Design</h2>
+
+  <div class="card">
+    <ul>
+      <li><strong>Type</strong> – dein grundlegender Energie-Typ (z. B. Generator, Projector)</li>
+      <li><strong>Inner Authority</strong> – wie du am besten Entscheidungen triffst</li>
+      <li><strong>Profile</strong> – deine Rolle und Lernweise im Leben</li>
+    </ul>
+  </div>
+
+  <h2>So erhältst du dein Human Design</h2>
+
+  <div class="card">
+    <p>
+      Bitte wähle, ob du deine Human Design Angaben bereits kennst oder die Webseite nutzen wirst, um sie zu berechnen:
+    </p>
+
+    <form method="get" action="/hd-entry">
+      <!-- Hidden fields -->
+      <input type="hidden" name="participant_id" value="{{ participant_id }}">
+      <input type="hidden" name="age_group" value="{{ age_group }}">
+      <input type="hidden" name="gender" value="{{ gender }}">
+
+      <label for="hd_known">Kennst du deine HD Angaben?</label>
+      <select id="hd_known" name="hd_known" required>
+        <option value="" disabled selected>Bitte auswählen</option>
+        <option value="known">Ja, ich kenne meine HD Angaben</option>
+        <option value="calculate">Ich werde die Webseite nutzen, um sie zu berechnen</option>
+      </select>
+
+      <div class="cta">
+        <button type="submit">Weiter zur Human Design Eingabe →</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="card">
+    <p>
+      Du kannst deinen Human Design Typ, Profile und Innere Autorität kostenlos über eine der untenstehenden Webseiten berechnen.
+      Du benötigst lediglich Informationen zu Deinem Geburtsdatum, Uhrzeit und Ort. Falls Du die Stunde Deiner Geburt nicht weisst, gib 12 Uhr (12 PM) an.
+    </p>
+    <ul>
+      <li><a href="https://human.design/get-your-chart" target="_blank" style="color:#a5b4fc;">human.design/get-your-chart</a></li>
+      <li><a href="https://www.humandesignjourney.de/chartrechner" target="_blank" style="color:#a5b4fc;">humandesignjourney.de/chartrechner</a></li>
+      <li><a href="https://www.allabouthumandesign.de/chart-berechnen" target="_blank" style="color:#a5b4fc;">allabouthumandesign.de/chart-berechnen</a></li>
+    </ul>
+    <p>
+      Öffne einfach eine der Webseiten in einem <strong>neuen Tab</strong>, berechne dein Chart, kehre anschließend hierher zurück und klicke auf "Weiter zur Human Design Eingabe".
+    </p>
+  </div>
+
+  <div class="symbols">
+    <div>◯ Type</div>
+    <div>△ Inner Authority</div>
+    <div>⬡ Profile</div>
+  </div>
+
+</div>
+
+</body>
+</html>

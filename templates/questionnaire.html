@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persönlichkeitsfragebogen</title>
+
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    background: linear-gradient(180deg, #0f172a, #020617);
+    color: #e5e7eb;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: #cbd5f5;
+  }
+
+  .question {
+    background: rgba(255,255,255,0.05);
+    padding: 16px 20px;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  .question p {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .likert label {
+    margin-right: 12px;
+    font-size: 0.95rem;
+  }
+
+  button {
+    display: block;
+    margin: 40px auto 20px;
+    padding: 14px 36px;
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 999px;
+    background: #6366f1;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  button:hover {
+    background: #4f46e5;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 30px;
+    color: #94a3b8;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>Big Five Persönlichkeitsfragebogen</h1>
+
+<div class="intro">
+  Bitte gib an, wie sehr die folgenden Aussagen auf dich zutreffen.
+  <br>
+  <strong>1 = stimme gar nicht zu · 5 = stimme voll zu</strong>
+</div>
+
+<form method="post" action="/submit-responses">
+
+  <!-- 🔒 WICHTIG: KONTEXT AUS FRÜHEREN SCHRITTEN -->
+  <input type="hidden" name="participant_id" value="{{ participant_id }}">
+  <input type="hidden" name="age_group" value="{{ age_group }}">
+  <input type="hidden" name="gender" value="{{ gender }}">
+  <input type="hidden" name="hd_type" value="{{ hd_type }}">
+  <input type="hidden" name="profile" value="{{ profile }}">
+  <input type="hidden" name="authority" value="{{ authority }}">
+  <input type="hidden" name="hd_known" value="{{ hd_known }}">
+
+  <!-- 1 -->
+  <div class="question">
+    <p>1. Ich sehe mich als eine Person, die eher ruhig ist.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q1" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="question">
+    <p>2. Ich sehe mich als eine Person, die dominant ist und gern die Führung übernimmt.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q2" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="question">
+    <p>3. Ich sehe mich als eine Person, die voller Energie ist.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q3" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="question">
+    <p>4. Ich sehe mich als eine Person, die mitfühlend ist und ein weiches Herz hat.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q4" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="question">
+    <p>5. Ich sehe mich als eine Person, die manchmal unhöflich zu anderen ist.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q5" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="question">
+    <p>6. Ich gehe im Allgemeinen davon aus, dass Menschen gute Absichten haben.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q6" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="question">
+    <p>7. Ich neige dazu, unorganisiert zu sein.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q7" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="question">
+    <p>8. Es fällt mir schwer, mit Aufgaben zu beginnen.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q8" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="question">
+    <p>9. Ich bin zuverlässig und man kann sich auf mich verlassen.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q9" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="question">
+    <p>10. Ich mache mir häufig Sorgen.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q10" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 11 -->
+  <div class="question">
+    <p>11. Ich fühle mich oft niedergeschlagen oder traurig.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q11" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 12 -->
+  <div class="question">
+    <p>12. Ich bin emotional stabil und lasse mich nicht leicht aus der Ruhe bringen.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q12" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 13 -->
+  <div class="question">
+    <p>13. Kunst, Musik oder Literatur faszinieren mich.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q13" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 14 -->
+  <div class="question">
+    <p>14. Ich habe wenig Interesse an abstrakten Ideen.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q14" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 15 -->
+  <div class="question">
+    <p>15. Ich komme häufig auf neue, originelle Ideen.</p>
+    <div class="likert">
+      {% for i in range(1,6) %}
+      <label><input type="radio" name="q15" value="{{ i }}" required> {{ i }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <button type="submit">Antworten absenden</button>
+
+</form>
+
+<div class="footer">
+  Quelle: Soto & John (2017), Big Five Inventory–2 (Kurzversion)
+</div>
+
+</body>
+</html>
