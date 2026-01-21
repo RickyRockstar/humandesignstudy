@@ -1,9 +1,2 @@
-participant_id,age_group,gender,hd_type,profile,authority,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,extraversion,freundlich,gewissenhaft,emotionale_labilität,offenheit
-34994ebc-abfb-4106-a013-3ddf2595dff5,25_34,weiblich,Manifesting Generator,5/2,Sakral,4,4,4,4,3,3,5,5,4,4,4,3,2,5,5,4.0,3.33,4.67,3.67,4.0
-2ab16585-4d77-4b4e-881e-1a70c2109824,25_34,weiblich,Manifesting Generator,5/2,Sakral,4,4,4,4,3,3,5,5,5,4,4,2,2,5,5,4.0,3.33,5.0,3.33,4.0
-9c2ea7e2-54f1-41ae-98c6-641ccf9c74c6,25_34,weiblich,Manifesting Generator,5/2,Sakral,4,4,4,4,4,3,5,5,5,4,4,2,1,5,5,4.0,3.67,5.0,3.33,3.67
-8e3b19da-5578-4011-9480-db81529e48e1,25_34,weiblich,Manifesting Generator,5/2,Sakral,2,4,4,4,2,4,2,2,4,4,4,2,4,2,4,3.33,3.33,2.67,3.33,3.33
-e7df974d-b47b-4ebe-b6b7-7d59cfb299c4,25_34,weiblich,Manifesting Generator,5/2,Sakral,2,4,4,4,2,4,2,2,4,4,4,2,4,2,4,3.33,3.33,2.67,3.33,3.33
-f591e821-16d1-4a68-b544-570c8c66c2e4,25_34,weiblich,Manifesting Generator,5/2,Sakral,1,5,5,5,1,5,1,1,5,5,5,1,5,1,5,3.67,3.67,2.33,3.67,3.67
-d7197616-f3d7-4a2d-ba18-1e8feb6f3790,unter_18,weiblich,Manifesting Generator,1/3,Emotional,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3.0,3.0,3.0,3.0,3.0
-0b7f5050-c9e8-44bc-9ced-66821ecb38f2,18_24,weiblich,Generator,1/4,Emotional,known,5,1,1,1,5,1,5,5,1,1,1,5,1,5,1,2.33,2.33,3.67,2.33,2.33
+participant_id,age_group,gender,hd_type,profile,authority,hd_known,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,extraversion,freundlich,gewissenhaft,emotionale_labilitaet,offenheit
+c54941cf-75f2-4176-8155-fb62d0a0d87b,25_34,weiblich,Manifesting Generator,5/2,Sakral,known,4,4,4,5,3,3,5,5,5,3,3,3,2,5,5,4.0,3.67,5.0,3.0,4.0
